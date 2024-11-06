@@ -8,4 +8,5 @@ public interface ITopicService {
     List<TopicDto> findAll();
     TopicDto addTopic(TopicDto topicDto);
     String deleteTopic(Long id);
+    TopicDto updateTopic(Long id, TopicDto topicDto);
 }

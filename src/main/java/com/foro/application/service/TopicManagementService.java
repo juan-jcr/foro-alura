@@ -51,4 +51,24 @@ public class TopicManagementService implements ITopicService {
         topicPersistence.deleteById(id);
         return "Eliminado con exito";
     }
+
+    @Override
+    public TopicDto updateTopic(Long id, TopicDto topicDto) {
+        Topic topic = topicPersistence.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Topic no existe") );
+
+        Optional<Topic> findTopic = topicPersistence.findByTitleAndMessage(topicDto.getTitle(), topicDto.getMessage());
+        if(findTopic.isPresent() && !findTopic.get().equals(topic)){
+            throw new ResourceNotFoundException("Ya existe un topico con ese mismo nombre");
+        }
+        topic.setTitle(topicDto.getTitle());
+        topic.setMessage(topicDto.getMessage());
+        topic.setDateOfCreation(topicDto.getDateOfCreation());
+        topic.setTopicalStatus(topicDto.isTopicalStatus());
+        topic.setCourse(topicDto.getCourse());
+
+        Topic topicSaved = topicPersistence.save(topic);
+        return modelMapper.map(topicSaved, TopicDto.class);
+
+    }
 }

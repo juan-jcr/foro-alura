@@ -32,4 +32,8 @@ public class TopicController {
     public ResponseEntity<String > deleteTopic(@PathVariable Long id){
         return new ResponseEntity<>(topicService.deleteTopic(id), HttpStatus.OK);
     }
+    @PutMapping("update/{id}")
+    public ResponseEntity<?> updateTopic(@PathVariable Long id, @RequestBody @Valid TopicDto topicDto){
+        return new ResponseEntity<>(topicService.updateTopic(id, topicDto), HttpStatus.OK);
+    }
 }
