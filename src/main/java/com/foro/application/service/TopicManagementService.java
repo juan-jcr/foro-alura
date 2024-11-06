@@ -71,4 +71,12 @@ public class TopicManagementService implements ITopicService {
         return modelMapper.map(topicSaved, TopicDto.class);
 
     }
+
+    @Override
+    public TopicDto findByIdTopic(Long id) {
+        Topic topic = topicPersistence.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Topico no existe"));
+
+        return modelMapper.map(topic, TopicDto.class);
+    }
 }

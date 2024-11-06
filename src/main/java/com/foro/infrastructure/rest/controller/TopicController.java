@@ -28,12 +28,16 @@ public class TopicController {
     public ResponseEntity<TopicDto> save(@RequestBody @Valid TopicDto topicDto){
         return new ResponseEntity<>(topicService.addTopic(topicDto), HttpStatus.OK);
     }
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<String > deleteTopic(@PathVariable Long id){
         return new ResponseEntity<>(topicService.deleteTopic(id), HttpStatus.OK);
     }
-    @PutMapping("update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<?> updateTopic(@PathVariable Long id, @RequestBody @Valid TopicDto topicDto){
         return new ResponseEntity<>(topicService.updateTopic(id, topicDto), HttpStatus.OK);
+    }
+    @GetMapping("/find/{id}")
+    public ResponseEntity<TopicDto> findByIdTopic(@PathVariable Long id){
+        return new ResponseEntity<>(topicService.findByIdTopic(id), HttpStatus.OK);
     }
 }
