@@ -37,4 +37,15 @@ public class TopicAdapter implements ITopicPersistence {
         return repository.findByTitleAndMessage(title, message)
                 .map(mapper::toTopic);
     }
+
+    @Override
+    public Optional<Topic> findById(Long id) {
+        return repository.findById(id)
+                .map(mapper::toTopic);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        repository.deleteById(id);
+    }
 }

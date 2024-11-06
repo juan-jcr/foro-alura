@@ -10,4 +10,6 @@ public interface ITopicPersistence {
     List<Topic> findAll();
     Topic save(Topic topic);
     Optional<Topic> findByTitleAndMessage(String title, String message);
+    Optional<Topic> findById(Long id);
+    void deleteById(Long id);
 }

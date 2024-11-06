@@ -28,4 +28,8 @@ public class TopicController {
     public ResponseEntity<TopicDto> save(@RequestBody @Valid TopicDto topicDto){
         return new ResponseEntity<>(topicService.addTopic(topicDto), HttpStatus.OK);
     }
+    @DeleteMapping("delete/{id}")
+    public ResponseEntity<String > deleteTopic(@PathVariable Long id){
+        return new ResponseEntity<>(topicService.deleteTopic(id), HttpStatus.OK);
+    }
 }

@@ -15,8 +15,10 @@ import java.util.stream.Collectors;
 
 @Service
 public class TopicManagementService implements ITopicService {
+
     private final ITopicPersistence topicPersistence;
     private final ModelMapper modelMapper;
+
     @Autowired
     public TopicManagementService(ITopicPersistence topicPersistence, ModelMapper modelMapper) {
         this.topicPersistence = topicPersistence;
@@ -40,5 +42,13 @@ public class TopicManagementService implements ITopicService {
         Topic topic = modelMapper.map(topicDto, Topic.class);
         Topic topicSaved = topicPersistence.save(topic);
         return modelMapper.map(topicSaved, TopicDto.class);
+    }
+
+    @Override
+    public String deleteTopic(Long id) {
+        topicPersistence.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("No existe tópico"));
+        topicPersistence.deleteById(id);
+        return "Eliminado con exito";
     }
 }

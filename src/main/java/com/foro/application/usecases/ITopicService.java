@@ -7,4 +7,5 @@ import java.util.List;
 public interface ITopicService {
     List<TopicDto> findAll();
     TopicDto addTopic(TopicDto topicDto);
+    String deleteTopic(Long id);
 }
