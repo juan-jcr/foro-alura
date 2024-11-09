@@ -1,4 +1,4 @@
-package com.foro.infrastructure.config;
+package com.foro.application.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
