@@ -1,5 +1,7 @@
 package com.foro.application.service;
 
+import com.foro.domain.exception.AlreadyExistsException;
+import com.foro.domain.exception.UnauthorizedException;
 import com.foro.domain.model.Author;
 import com.foro.domain.port.IAuthorPersistence;
 import com.foro.infrastructure.rest.dto.LoginDto;
@@ -24,6 +26,11 @@ public class AuthService {
     }
 
     public TokenResponseDto register(RegisterDto registerDto) {
+        Optional<Author>   findAuthor = authorPersistence.findByEmail(registerDto.getEmail());
+
+        if(findAuthor.isPresent()){
+            throw new AlreadyExistsException("El campo email ya existe");
+        }
         Author author = new Author();
         author.setName(registerDto.getName());
         author.setEmail(registerDto.getEmail());
@@ -43,6 +50,6 @@ public class AuthService {
             return new TokenResponseDto(token);
         }
 
-        throw new RuntimeException("Credenciales inválidas");
+        throw new UnauthorizedException("Credenciales inválidas");
     }
 }

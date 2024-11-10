@@ -1,6 +1,7 @@
 package com.foro.application.service;
 
 import com.foro.application.usecases.ITopicService;
+import com.foro.domain.exception.AlreadyExistsException;
 import com.foro.domain.exception.ResourceNotFoundException;
 import com.foro.domain.model.Topic;
 import com.foro.domain.port.ITopicPersistence;
@@ -37,7 +38,7 @@ public class TopicManagementService implements ITopicService {
         Optional<Topic> existingTopic = topicPersistence
                 .findByTitleAndMessage(topicDto.getTitle(), topicDto.getMessage());
         if(existingTopic.isPresent()){
-            throw new ResourceNotFoundException("Ya existe un Topico");
+            throw new AlreadyExistsException("Ya existe un Topico");
         }
         Topic topic = modelMapper.map(topicDto, Topic.class);
         Topic topicSaved = topicPersistence.save(topic);

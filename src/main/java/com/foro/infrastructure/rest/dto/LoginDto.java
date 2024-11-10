@@ -1,7 +1,15 @@
 package com.foro.infrastructure.rest.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+
 public class LoginDto {
+
+    @Email
+    @NotEmpty(message = "El email es obligatorio")
     private String email;
+
+    @NotEmpty(message = "La contraseña es obligatoria")
     private String password;
 
     public LoginDto(){}

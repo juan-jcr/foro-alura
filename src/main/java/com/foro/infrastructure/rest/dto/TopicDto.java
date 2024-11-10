@@ -8,9 +8,9 @@ import java.time.LocalDate;
 
 public class TopicDto {
     private Long id;
-    @NotBlank(message = "El titulo no puede ser nulo")
+    @NotBlank(message = "El titulo es obligatorio")
     private String title;
-    @NotBlank(message = "el mensaje no puede ser nulo")
+    @NotBlank(message = "el mensaje es obligatorio")
     private String message;
     @NotNull(message = "La fecha no puede ser nula")
     @FutureOrPresent(message = "La fecha debe ser hoy o una fecha futura")

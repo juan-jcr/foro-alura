@@ -1,8 +1,11 @@
 package com.foro.infrastructure.rest.advice;
 
+import com.foro.domain.exception.AlreadyExistsException;
 import com.foro.domain.exception.ResourceNotFoundException;
+import com.foro.domain.exception.UnauthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -25,6 +28,32 @@ public class GlobalExcepcionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<Map<String, Object>> resourceNotFound(ResourceNotFoundException exception){
+        errorMap.put("Status", "Error");
+        errorMap.put("Message", exception.getMessage());
+        errorMap.put("Code", HttpStatus.NOT_FOUND);
+
+        return new ResponseEntity<>(errorMap, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(AlreadyExistsException.class)
+    public ResponseEntity<Map<String, Object>> alreadyExistsException(AlreadyExistsException exception){
+        errorMap.put("Status", "Error");
+        errorMap.put("Message", exception.getMessage());
+        errorMap.put("Code", HttpStatus.CONFLICT);
+
+        return new ResponseEntity<>(errorMap, HttpStatus.CONFLICT);
+    }
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<Map<String, Object>> UnauthorizedException(UnauthorizedException exception){
+        errorMap.put("Status", "Error");
+        errorMap.put("Message", exception.getMessage());
+        errorMap.put("Code", HttpStatus.UNAUTHORIZED);
+
+        return new ResponseEntity<>(errorMap, HttpStatus.UNAUTHORIZED);
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<Map<String, Object>> badCredentials(BadCredentialsException exception){
         errorMap.put("Status", "Error");
         errorMap.put("Message", exception.getMessage());
         errorMap.put("Code", HttpStatus.NOT_FOUND);
