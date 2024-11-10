@@ -1,41 +1,24 @@
 package com.foro.infrastructure.rest.dto;
 
-import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
-import java.time.LocalDate;
 
 public class TopicDto {
-    private Long id;
     @NotBlank(message = "El titulo es obligatorio")
     private String title;
     @NotBlank(message = "el mensaje es obligatorio")
     private String message;
-    @NotNull(message = "La fecha no puede ser nula")
-    @FutureOrPresent(message = "La fecha debe ser hoy o una fecha futura")
-    private LocalDate dateOfCreation;
-    private boolean topicalStatus;
+
     @NotBlank(message = "el curso no puede ser nulo")
     private String course;
 
     public TopicDto(){}
-    public TopicDto(Long id, String title, String message, LocalDate dateOfCreation, boolean topicalStatus, String course) {
-        this.id = id;
+    public TopicDto(String title, String message,  String course) {
         this.title = title;
         this.message = message;
-        this.dateOfCreation = dateOfCreation;
-        this.topicalStatus = topicalStatus;
         this.course = course;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -51,22 +34,6 @@ public class TopicDto {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    public LocalDate getDateOfCreation() {
-        return dateOfCreation;
-    }
-
-    public void setDateOfCreation(LocalDate dateOfCreation) {
-        this.dateOfCreation = dateOfCreation;
-    }
-
-    public boolean isTopicalStatus() {
-        return topicalStatus;
-    }
-
-    public void setTopicalStatus(boolean topicalStatus) {
-        this.topicalStatus = topicalStatus;
     }
 
     public String getCourse() {

@@ -2,6 +2,7 @@ package com.foro.infrastructure.rest.controller;
 
 import com.foro.application.usecases.ITopicService;
 import com.foro.infrastructure.rest.dto.TopicDto;
+import com.foro.infrastructure.rest.dto.TopicResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,11 +22,11 @@ public class TopicController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<TopicDto>> findAll(){
+    public ResponseEntity<List<TopicResponse>> findAll(){
         return new ResponseEntity<>(topicService.findAll(), HttpStatus.OK);
     }
     @PostMapping("/add")
-    public ResponseEntity<TopicDto> save(@RequestBody @Valid TopicDto topicDto){
+    public ResponseEntity<TopicResponse> save(@RequestBody @Valid TopicDto topicDto){
         return new ResponseEntity<>(topicService.addTopic(topicDto), HttpStatus.OK);
     }
     @DeleteMapping("/delete/{id}")
@@ -37,7 +38,7 @@ public class TopicController {
         return new ResponseEntity<>(topicService.updateTopic(id, topicDto), HttpStatus.OK);
     }
     @GetMapping("/find/{id}")
-    public ResponseEntity<TopicDto> findByIdTopic(@PathVariable Long id){
+    public ResponseEntity<TopicResponse> findByIdTopic(@PathVariable Long id){
         return new ResponseEntity<>(topicService.findByIdTopic(id), HttpStatus.OK);
     }
 }

@@ -1,13 +1,14 @@
 package com.foro.application.usecases;
 
 import com.foro.infrastructure.rest.dto.TopicDto;
+import com.foro.infrastructure.rest.dto.TopicResponse;
 
 import java.util.List;
 
 public interface ITopicService {
-    List<TopicDto> findAll();
-    TopicDto addTopic(TopicDto topicDto);
+    List<TopicResponse> findAll();
+    TopicResponse addTopic(TopicDto topicDto);
     String deleteTopic(Long id);
-    TopicDto updateTopic(Long id, TopicDto topicDto);
-    TopicDto findByIdTopic(Long id);
+    TopicResponse updateTopic(Long id, TopicDto topicDto);
+    TopicResponse findByIdTopic(Long id);
 }

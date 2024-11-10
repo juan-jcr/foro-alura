@@ -6,10 +6,13 @@ import com.foro.domain.exception.ResourceNotFoundException;
 import com.foro.domain.model.Topic;
 import com.foro.domain.port.ITopicPersistence;
 import com.foro.infrastructure.rest.dto.TopicDto;
+import com.foro.infrastructure.rest.dto.TopicResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -27,22 +30,25 @@ public class TopicManagementService implements ITopicService {
     }
 
     @Override
-    public List<TopicDto> findAll() {
+    public List<TopicResponse> findAll() {
         List<Topic> topics = (List<Topic>) topicPersistence.findAll();
-        return topics.stream().map(topic -> modelMapper.map(topic, TopicDto.class))
+        return topics.stream().map(topic -> modelMapper.map(topic, TopicResponse.class))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public TopicDto addTopic(TopicDto topicDto) {
+    public TopicResponse addTopic(TopicDto topicDto) {
         Optional<Topic> existingTopic = topicPersistence
                 .findByTitleAndMessage(topicDto.getTitle(), topicDto.getMessage());
         if(existingTopic.isPresent()){
             throw new AlreadyExistsException("Ya existe un Topico");
         }
         Topic topic = modelMapper.map(topicDto, Topic.class);
+        LocalDate date = LocalDate.now();
+        topic.setDateOfCreation(date);
+        topic.setTopicalStatus(true);
         Topic topicSaved = topicPersistence.save(topic);
-        return modelMapper.map(topicSaved, TopicDto.class);
+        return modelMapper.map(topicSaved, TopicResponse.class);
     }
 
     @Override
@@ -54,7 +60,7 @@ public class TopicManagementService implements ITopicService {
     }
 
     @Override
-    public TopicDto updateTopic(Long id, TopicDto topicDto) {
+    public TopicResponse updateTopic(Long id, TopicDto topicDto) {
         Topic topic = topicPersistence.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Topic no existe") );
 
@@ -62,22 +68,23 @@ public class TopicManagementService implements ITopicService {
         if(findTopic.isPresent() && !findTopic.get().equals(topic)){
             throw new ResourceNotFoundException("Ya existe un topico con ese mismo nombre");
         }
+        LocalDate date = LocalDate.now();
         topic.setTitle(topicDto.getTitle());
         topic.setMessage(topicDto.getMessage());
-        topic.setDateOfCreation(topicDto.getDateOfCreation());
-        topic.setTopicalStatus(topicDto.isTopicalStatus());
+        topic.setDateOfCreation(date);
+        topic.setTopicalStatus(true);
         topic.setCourse(topicDto.getCourse());
 
         Topic topicSaved = topicPersistence.save(topic);
-        return modelMapper.map(topicSaved, TopicDto.class);
+        return modelMapper.map(topicSaved, TopicResponse.class);
 
     }
 
     @Override
-    public TopicDto findByIdTopic(Long id) {
+    public TopicResponse findByIdTopic(Long id) {
         Topic topic = topicPersistence.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Topico no existe"));
 
-        return modelMapper.map(topic, TopicDto.class);
+        return modelMapper.map(topic, TopicResponse.class);
     }
 }
