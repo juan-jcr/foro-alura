@@ -1,5 +1,7 @@
 package com.foro.domain.model;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class Author {
     private Long id;
@@ -7,13 +9,14 @@ public class Author {
     private String email;
     private String password;
 
+
     public Author(){}
 
-    public Author(Long id, String name, String password, String email) {
+    public Author(Long id, String name, String email, String password ) {
         this.id = id;
         this.name = name;
-        this.password = password;
         this.email = email;
+        this.password = password;
     }
 
     public Long getId() {
@@ -47,5 +50,8 @@ public class Author {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+
 }
 

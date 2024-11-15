@@ -3,6 +3,7 @@ package com.foro.infrastructure.rest.controller;
 import com.foro.application.usecases.ITopicService;
 import com.foro.infrastructure.rest.dto.TopicDto;
 import com.foro.infrastructure.rest.dto.TopicResponse;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

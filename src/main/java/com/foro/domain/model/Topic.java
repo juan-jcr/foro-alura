@@ -9,16 +9,20 @@ public class Topic {
     private String message;
     private LocalDate dateOfCreation;
     private boolean topicalStatus;
+    private Author author;
     private String course;
 
+
     public Topic(){}
-    public Topic(Long id, String course, boolean topicalStatus, LocalDate dateOfCreation, String message, String title) {
+
+    public Topic(Long id, String title, String message, LocalDate dateOfCreation, boolean topicalStatus, Author author, String course) {
         this.id = id;
-        this.course = course;
-        this.topicalStatus = topicalStatus;
-        this.dateOfCreation = dateOfCreation;
-        this.message = message;
         this.title = title;
+        this.message = message;
+        this.dateOfCreation = dateOfCreation;
+        this.topicalStatus = topicalStatus;
+        this.author = author;
+        this.course = course;
     }
 
     public Long getId() {
@@ -29,28 +33,12 @@ public class Topic {
         this.id = id;
     }
 
-    public String getCourse() {
-        return course;
+    public String getTitle() {
+        return title;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
-    }
-
-    public boolean isTopicalStatus() {
-        return topicalStatus;
-    }
-
-    public void setTopicalStatus(boolean topicalStatus) {
-        this.topicalStatus = topicalStatus;
-    }
-
-    public LocalDate getDateOfCreation() {
-        return dateOfCreation;
-    }
-
-    public void setDateOfCreation(LocalDate dateOfCreation) {
-        this.dateOfCreation = dateOfCreation;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getMessage() {
@@ -61,11 +49,35 @@ public class Topic {
         this.message = message;
     }
 
-    public String getTitle() {
-        return title;
+    public LocalDate getDateOfCreation() {
+        return dateOfCreation;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setDateOfCreation(LocalDate dateOfCreation) {
+        this.dateOfCreation = dateOfCreation;
+    }
+
+    public boolean isTopicalStatus() {
+        return topicalStatus;
+    }
+
+    public void setTopicalStatus(boolean topicalStatus) {
+        this.topicalStatus = topicalStatus;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
     }
 }

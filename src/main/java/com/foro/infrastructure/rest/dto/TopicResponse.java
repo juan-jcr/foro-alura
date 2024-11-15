@@ -1,5 +1,7 @@
 package com.foro.infrastructure.rest.dto;
 
+import com.foro.domain.model.Author;
+
 import java.time.LocalDate;
 
 public class TopicResponse {
@@ -8,14 +10,18 @@ public class TopicResponse {
     private String message;
     private LocalDate dateOfCreation;
     private boolean topicalStatus;
+    private Author author;
     private String course;
+
+
     public TopicResponse(){}
-    public TopicResponse(Long id, String title, String message, LocalDate dateOfCreation, boolean topicalStatus, String course) {
+    public TopicResponse(Long id, String title, String message, LocalDate dateOfCreation, boolean topicalStatus, Author author, String course) {
         this.id = id;
         this.title = title;
         this.message = message;
         this.dateOfCreation = dateOfCreation;
         this.topicalStatus = topicalStatus;
+        this.author = author;
         this.course = course;
     }
 
@@ -57,6 +63,14 @@ public class TopicResponse {
 
     public void setTopicalStatus(boolean topicalStatus) {
         this.topicalStatus = topicalStatus;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     public String getCourse() {

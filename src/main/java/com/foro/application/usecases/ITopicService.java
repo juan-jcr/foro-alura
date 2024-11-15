@@ -2,6 +2,7 @@ package com.foro.application.usecases;
 
 import com.foro.infrastructure.rest.dto.TopicDto;
 import com.foro.infrastructure.rest.dto.TopicResponse;
+import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.List;
 

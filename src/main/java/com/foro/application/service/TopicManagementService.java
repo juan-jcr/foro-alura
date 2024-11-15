@@ -3,16 +3,17 @@ package com.foro.application.service;
 import com.foro.application.usecases.ITopicService;
 import com.foro.domain.exception.AlreadyExistsException;
 import com.foro.domain.exception.ResourceNotFoundException;
+import com.foro.domain.model.Author;
 import com.foro.domain.model.Topic;
 import com.foro.domain.port.ITopicPersistence;
 import com.foro.infrastructure.rest.dto.TopicDto;
 import com.foro.infrastructure.rest.dto.TopicResponse;
+import com.foro.infrastructure.security.utils.JwtUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -22,11 +23,13 @@ public class TopicManagementService implements ITopicService {
 
     private final ITopicPersistence topicPersistence;
     private final ModelMapper modelMapper;
+    private final JwtUtils jwtUtils;
 
     @Autowired
-    public TopicManagementService(ITopicPersistence topicPersistence, ModelMapper modelMapper) {
+    public TopicManagementService(ITopicPersistence topicPersistence, ModelMapper modelMapper, JwtUtils jwtUtils) {
         this.topicPersistence = topicPersistence;
         this.modelMapper = modelMapper;
+        this.jwtUtils = jwtUtils;
     }
 
     @Override
@@ -43,10 +46,15 @@ public class TopicManagementService implements ITopicService {
         if(existingTopic.isPresent()){
             throw new AlreadyExistsException("Ya existe un Topico");
         }
+
         Topic topic = modelMapper.map(topicDto, Topic.class);
         LocalDate date = LocalDate.now();
+        Author authenticatedUser = jwtUtils.getAuthenticatedUser();
+
         topic.setDateOfCreation(date);
         topic.setTopicalStatus(true);
+        topic.setAuthor(authenticatedUser);
+
         Topic topicSaved = topicPersistence.save(topic);
         return modelMapper.map(topicSaved, TopicResponse.class);
     }

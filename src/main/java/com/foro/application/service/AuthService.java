@@ -38,7 +38,7 @@ public class AuthService {
 
         authorPersistence.save(author);
 
-        String token = jwtUtils.generateToken(author.getEmail());
+        String token = jwtUtils.generateToken(author.getEmail(), author.getName());
         return new TokenResponseDto(token);
     }
 
@@ -46,7 +46,7 @@ public class AuthService {
         Optional<Author> user = authorPersistence.findByEmail(loginDto.getEmail());
 
         if (user.isPresent() && passwordEncoder.matches(loginDto.getPassword(), user.get().getPassword())) {
-            String token = jwtUtils.generateToken(user.get().getEmail());
+            String token = jwtUtils.generateToken(user.get().getEmail(), user.get().getName());
             return new TokenResponseDto(token);
         }
 

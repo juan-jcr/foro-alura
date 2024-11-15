@@ -2,6 +2,9 @@ package com.foro.infrastructure.adapter.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "author")
 public class AuthorEntity {
@@ -12,14 +15,20 @@ public class AuthorEntity {
     @Column(nullable = false, unique = true)
     private String email;
     private String password;
+    /*
+    @JsonIgnore
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<TopicEntity> topicEntities;*/
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<TopicEntity> topicEntities = new ArrayList<>();
 
     public AuthorEntity(){}
-
-    public AuthorEntity(Long id, String name, String password, String email) {
+    public AuthorEntity(Long id, String name, String email, String password, List<TopicEntity> topicEntities) {
         this.id = id;
         this.name = name;
-        this.password = password;
         this.email = email;
+        this.password = password;
+        this.topicEntities = topicEntities;
     }
 
     public Long getId() {
@@ -52,6 +61,14 @@ public class AuthorEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<TopicEntity> getTopicEntities() {
+        return topicEntities;
+    }
+
+    public void setTopicEntities(List<TopicEntity> topicEntities) {
+        this.topicEntities = topicEntities;
     }
 }
 

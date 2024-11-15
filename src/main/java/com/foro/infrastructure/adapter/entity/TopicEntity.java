@@ -16,20 +16,23 @@ public class TopicEntity {
     private LocalDate dateOfCreation;
     @Column(name = "topical_status")
     private boolean topicalStatus;
-    //implementar más tarde
-    //private UserEntity author;
+
+    @ManyToOne
+    @JoinColumn(name = "author_id", nullable = false)
+    private AuthorEntity author;
+
     private String course;
 
     public TopicEntity(){
-
     }
 
-    public TopicEntity(Long id, String title, String message, LocalDate dateOfCreation, boolean topicalStatus, String course) {
+    public TopicEntity(Long id, String title, String message, LocalDate dateOfCreation, boolean topicalStatus, AuthorEntity author, String course) {
         this.id = id;
         this.title = title;
         this.message = message;
         this.dateOfCreation = dateOfCreation;
         this.topicalStatus = topicalStatus;
+        this.author = author;
         this.course = course;
     }
 
@@ -71,6 +74,14 @@ public class TopicEntity {
 
     public void setTopicalStatus(boolean topicalStatus) {
         this.topicalStatus = topicalStatus;
+    }
+
+    public AuthorEntity getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(AuthorEntity author) {
+        this.author = author;
     }
 
     public String getCourse() {
