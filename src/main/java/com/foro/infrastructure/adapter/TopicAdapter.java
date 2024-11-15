@@ -1,5 +1,6 @@
 package com.foro.infrastructure.adapter;
 
+import com.foro.domain.model.Author;
 import com.foro.domain.model.Topic;
 import com.foro.domain.port.ITopicPersistence;
 import com.foro.infrastructure.adapter.mapper.ITopicMapper;

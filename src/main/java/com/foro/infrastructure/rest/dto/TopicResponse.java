@@ -10,12 +10,12 @@ public class TopicResponse {
     private String message;
     private LocalDate dateOfCreation;
     private boolean topicalStatus;
-    private Author author;
+    private AuthorResponse author;
     private String course;
 
 
     public TopicResponse(){}
-    public TopicResponse(Long id, String title, String message, LocalDate dateOfCreation, boolean topicalStatus, Author author, String course) {
+    public TopicResponse(Long id, String title, String message, LocalDate dateOfCreation, boolean topicalStatus, AuthorResponse author, String course) {
         this.id = id;
         this.title = title;
         this.message = message;
@@ -65,11 +65,11 @@ public class TopicResponse {
         this.topicalStatus = topicalStatus;
     }
 
-    public Author getAuthor() {
+    public AuthorResponse getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(AuthorResponse author) {
         this.author = author;
     }
 

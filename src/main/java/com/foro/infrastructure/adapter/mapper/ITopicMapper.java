@@ -10,7 +10,7 @@ import java.util.List;
 public interface ITopicMapper {
     TopicEntity toTopicEntity(Topic topic);
 
-    Topic toTopic(TopicEntity entity);
+    Topic toTopic(TopicEntity topicEntity);
 
     List<Topic> toTopicList(List<TopicEntity> entityList);
 }

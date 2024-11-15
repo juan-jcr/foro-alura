@@ -73,14 +73,19 @@ public class TopicManagementService implements ITopicService {
                 .orElseThrow(() -> new ResourceNotFoundException("Topic no existe") );
 
         Optional<Topic> findTopic = topicPersistence.findByTitleAndMessage(topicDto.getTitle(), topicDto.getMessage());
-        if(findTopic.isPresent() && !findTopic.get().equals(topic)){
-            throw new ResourceNotFoundException("Ya existe un topico con ese mismo nombre");
+
+        if(findTopic.isPresent() && !findTopic.get().getId().equals(topic.getId())){
+            throw new AlreadyExistsException("Ya existe un topico con ese mismo nombre");
         }
+
         LocalDate date = LocalDate.now();
+        Author authenticatedUser = jwtUtils.getAuthenticatedUser();
+
         topic.setTitle(topicDto.getTitle());
         topic.setMessage(topicDto.getMessage());
         topic.setDateOfCreation(date);
         topic.setTopicalStatus(true);
+        topic.setAuthor(authenticatedUser);
         topic.setCourse(topicDto.getCourse());
 
         Topic topicSaved = topicPersistence.save(topic);

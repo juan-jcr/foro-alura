@@ -35,7 +35,7 @@ public class TopicController {
         return new ResponseEntity<>(topicService.deleteTopic(id), HttpStatus.OK);
     }
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateTopic(@PathVariable Long id, @RequestBody @Valid TopicDto topicDto){
+    public ResponseEntity<TopicResponse> updateTopic(@PathVariable Long id, @RequestBody @Valid TopicDto topicDto){
         return new ResponseEntity<>(topicService.updateTopic(id, topicDto), HttpStatus.OK);
     }
     @GetMapping("/find/{id}")
