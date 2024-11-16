@@ -3,18 +3,18 @@
 
 >
 <p align="left">
-  🎓 ESTUDIANTE DE ANALISIS Y DESARROLLO DE SOFTWARE
+ <h2 align="center">Challenge ONE | Back End | Foro Alura </h2>
+  ONE-ORACLE NEXT EDUCATION
+Challenge ONE Sprint 04: Crea tu propia API REST con Spring Boot 3.0.
+Desafio del programa ONE-ORACLE NEXT EDUCATION  - Desarrollo de una API REST con Java y Spring Boot 3.0.
 
-  📝 Actualmente estoy en formación en Análisis y Desarrollo de Software en el SENA.
-  
 
-  💻 Tengo experiencia trabajando con JAVA | SPRING FRAMEWORK | JAVASCRIPT | REACT.
-  
-  
-  💪🏼 Frase favorita: "Los grandes desarrolladores nunca dejan de aprender".
 
-  
-  📫 Contacto: **castaneda2850@gmail.com**
+El foro alura es un lugar donde todos los alumnos de la plataforma alura pueden colocar sus preguntas sobre determinados cursos, este mágico lugar está lleno de mucho aprendizaje y de colaboración entre alumnos, profesores y moderadores..
+
+Ese es nuestro desafío, vamos a replicar a nivel de back end este proceso, y para eso crearemos una API REST usando Spring.
+
+Es lo que conocemos comúnmente como CRUD (CREATE, READ, UPDATE, DELETE) y es muy parecido con lo que desarrollamos en el Hotel Alura, pero ahora usando un framework que va a facilitar mucho nuestro trabajo un nuevo modelo de arquitectura de software conocido como REST.
 
 <p/>
 <br>
