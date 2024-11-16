@@ -40,7 +40,7 @@
     "password":"password"
 }
 ```
-##### <a id="usercreate">Create Topic -> /api/v1/topics/add</a>
+##### <a id="topicCreate">Create Topic -> /api/v1/topics/add</a>
 ```json
 {
     "title": "Titulo Uno",
@@ -64,5 +64,31 @@
     "course": "Curso Uno"
 }
 ```
+##### <a id="topicUpdate">Update Topic -> /api/v1/topics/update/1</a>
+
+```json
+{
+    "title": "Titulo  Actualizado",
+    "message": "Mensaje Uno",
+    "course": "Curso Uno"
+}
+```
+```json
+//Response when updating topic
+{
+    "id": 1,
+    "title": "Titulo Actualizado",
+    "message": "Mensaje Uno",
+    "dateOfCreation": "2024-11-16",
+    "topicalStatus": true,
+    "author": {
+        "id": 1,
+        "name": "Juan  Castañeda",
+        "email": "prueba@gmail.com"
+    },
+    "course": "Curso Uno"
+}
+```
+
 
 
