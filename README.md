@@ -24,5 +24,7 @@
   </a>
 </p>
 <br>
-<h2 align="center">Instalación👨🏻‍💻</h2>
+<h2 align="center">Instalación📌</h2>
+<br>
+<h2 align="center">Funcionalidad 🔎</h2>
 
