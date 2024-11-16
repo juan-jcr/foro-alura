@@ -47,7 +47,7 @@
     "message": "Mensaje Uno",
     "course": "Curso Uno"
 }
-//RESPONSE
+// RESPONSE
 
 {
     "id": 1,
