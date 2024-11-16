@@ -33,6 +33,17 @@ The app defines following CRUD APIs.
 | POST   | /auth/log-in     | Log in | [JSON](#signin) |
 | POST   | /auth/sign-up    | Sign up| [JSON](#signup) |
 
+### Tópicos
+
+| Method | Url | Description | Sample Valid Request Body |
+| ------ | --- | ----------- | ------------------------- |
+| GET    | /api/v1/topics/all | Get all topics | |
+| GET    | /api/v1/topics/find/{id} | Get topic by id | |
+| POST   | /api/v1/topics/add | Create new topic (By logged in user) | [JSON](#topicCreate) |
+| PUT    | /api/v1/topics/update/{id} | Update topic by id| [JSON](#topicUpdate) |
+| DELETE | /api/v1/topics/delete/{id} | Delete topic | |
+
+
 ## Sample Valid JSON Request Bodys
 
 ##### <a id="signup">Sign Up -> /auth/sign-up</a>
