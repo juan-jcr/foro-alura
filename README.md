@@ -16,15 +16,15 @@
 <p/>
 <br>
 
-<h2 align="center">Tecnologías usada👨🏻‍💻</h2>
+<h2 >Tecnologías usada👨🏻‍💻</h2>
 <!--tech stack icons-->
-<p align="center">
+<p>
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=java,spring,idea,maven,mysql,postman,git,github&perline=6" />
   </a>
 </p>
 <br>
-<h2 align="center">Instalación📌</h2>
+<h2>Instalación📌</h2>
 <br>
-<h2 align="center">Funcionalidad 🔎</h2>
+<h2>Funcionalidad 🔎</h2>
 
