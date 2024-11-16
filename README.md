@@ -3,7 +3,7 @@
 
 >
 <p align="left">
- <h2 align="center">Descripción</h2>
+ <h2 align="left">Descripción</h2>
   
  ✅ Desafio del programa ONE-ORACLE NEXT EDUCATION  - Desarrollo de una API REST con Java y Spring Boot 3.0.
 
