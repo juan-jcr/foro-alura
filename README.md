@@ -19,7 +19,6 @@
 <h2 align="center">Tecnologías usada👨🏻‍💻</h2>
 <!--tech stack icons-->
 <p align="center">
- <h2>:zap: Back-end and tools</h2>
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=java,spring,idea,maven,mysql,postman,git,github&perline=6" />
   </a>
