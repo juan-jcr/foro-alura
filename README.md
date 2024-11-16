@@ -86,8 +86,16 @@ The app defines following CRUD APIs.
     "course": "Curso Uno"
 }
 ```
-##### <a id="topicUpdate">Update Topic -> /api/v1/topics/update/1</a>
 
+
+##### <a id="topicUpdate">Update Topic -> /api/v1/topics/update/1</a>
+```json
+{
+    "title": "Titulo Actualizado",
+    "message": "Mensaje Uno",
+    "course": "Curso Uno"
+}
+```
 ```json
 //Response when updating topic
 {
