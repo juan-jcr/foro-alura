@@ -24,19 +24,43 @@
 <h2>Funcionalidad 🔎</h2>
 ## Sample Valid JSON Request Bodys
 
-##### <a id="signup">Sign Up -> /api/auth/signup</a>
+##### <a id="signup">Sign Up -> /auth/sign-up</a>
 ```json
 {
-    "name":"juan",
-    "email":"castaneda@gmail.com",
+    "name":"Juan  Castañeda",
+    "email":"prueba@gmail.com",
     "password":"password"
 }
 ```
 
-##### <a id="signin">Log In -> /api/auth/signin</a>
+##### <a id="signin">Log In -> /auth/log-in</a>
 ```json
 {
-     "email":"castaneda@gmail.com",
-     "password":"password"
+    "email":"prueba@gmail.com",
+    "password":"password"
 }
 ```
+##### <a id="usercreate">Create Topic -> /api/v1/topics/add</a>
+```json
+{
+    "title": "Titulo Uno",
+    "message": "Mensaje Uno",
+    "course": "Curso Uno"
+}
+//RESPONSE
+
+{
+    "id": 1,
+    "title": "Titulo Uno",
+    "message": "Mensaje Uno",
+    "dateOfCreation": "2024-11-16",
+    "topicalStatus": true,
+    "author": {
+        "id": 1,
+        "name": "Juan  Castañeda",
+        "email": "prueba@gmail.com"
+    },
+    "course": "Curso Uno"
+}
+```
+
