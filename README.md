@@ -16,3 +16,18 @@
 <p/>
 <br>
 
+<h2 align="center">Tecnologías usada👨🏻‍💻</h2>
+<!--tech stack icons-->
+<p align="center">
+ <h2>:zap: Back End</h2>
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=java,spring,idea,maven,mysql&perline=6" />
+  </a>
+
+  <h2>:wrench: Tools</h2>
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=postman,git,github&perline=6" />
+  </a>
+</p>
+<br>
+
