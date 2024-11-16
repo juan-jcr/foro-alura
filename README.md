@@ -22,6 +22,17 @@
 <h2>Instalación📌</h2>
 <br>
 <h2>Funcionalidad 🔎</h2>
+ ## Explore Rest APIs
+
+The app defines following CRUD APIs.
+
+### Auth
+
+| Method | Url | Decription | Sample Valid Request Body | 
+| ------ | --- | ---------- | --------------------------- |
+| POST   | /auth/log-in     | Log in | [JSON](#signin) |
+| POST   | /auth/sign-up    | Sign up| [JSON](#signup) |
+
 ## Sample Valid JSON Request Bodys
 
 ##### <a id="signup">Sign Up -> /auth/sign-up</a>
@@ -66,13 +77,6 @@
 ```
 ##### <a id="topicUpdate">Update Topic -> /api/v1/topics/update/1</a>
 
-```json
-{
-    "title": "Titulo  Actualizado",
-    "message": "Mensaje Uno",
-    "course": "Curso Uno"
-}
-```
 ```json
 //Response when updating topic
 {
