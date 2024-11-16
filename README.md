@@ -47,8 +47,9 @@
     "message": "Mensaje Uno",
     "course": "Curso Uno"
 }
-// RESPONSE
-
+```
+```json
+//Response when creating topic
 {
     "id": 1,
     "title": "Titulo Uno",
@@ -63,4 +64,5 @@
     "course": "Curso Uno"
 }
 ```
+
 
