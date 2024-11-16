@@ -11,8 +11,8 @@
 
 ✅ Ese es nuestro desafío, vamos a replicar a nivel de back end este proceso, y para eso crearemos una API REST usando Spring Boot.
 
-✅ Realizaremos CRUD (CREATE, READ, UPDATE, DELETE) y usaremos un framework de Java Spring Framework por ende diseñaremos con #### 
- arquitectura hexagonal
+✅ Realizaremos CRUD (CREATE, READ, UPDATE, DELETE) y usaremos un framework de Java Spring Framework por ende diseñaremos con  
+  ### arquitectura hexagonal
 
 #### 📃Visita la página del Desafío [¡Haciendo clic aquí!](https://www.aluracursos.com/challenges/oracle-one-back-end/aluraforo) 
 
