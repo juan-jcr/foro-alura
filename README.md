@@ -19,15 +19,6 @@
 
 <p/>
 <br>
-
-<h2 >Tecnologías usada👨🏻‍💻</h2>
-<!--tech stack icons-->
-<p>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=java,spring,idea,maven,mysql,postman,git,github&perline=6" />
-  </a>
-</p>
-<br>
 <h2>Instalación📌</h2>
 <br>
 <h2>Funcionalidad 🔎</h2>
