@@ -21,13 +21,9 @@
 <p align="center">
  <h2>:zap: Back-end and tools</h2>
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=java,spring,idea,maven,mysql,postman,git,github,swagger&perline=6" />
-  </a>
-
-  <h2>:wrench: Tools</h2>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=postman,git,github&perline=6" />
+    <img src="https://skillicons.dev/icons?i=java,spring,idea,maven,mysql,postman,git,github&perline=6" />
   </a>
 </p>
 <br>
+<h2 align="center">Instalación👨🏻‍💻</h2>
 
