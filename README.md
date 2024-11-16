@@ -1,5 +1,5 @@
 <h1 align="center">Challenge ONE | Back End | Foro Alura </h1>
-<img align="right" alt="Coding" width="450" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif">
+<img align="right" alt="Coding" width="450" src="https://www.servicetonic.com/wp-content/uploads/2020/10/API-Interface-Servicetonic.png">
 
 >
 <p align="left">
