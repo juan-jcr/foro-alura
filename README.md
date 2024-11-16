@@ -22,4 +22,21 @@
 <h2>Instalación📌</h2>
 <br>
 <h2>Funcionalidad 🔎</h2>
+## Sample Valid JSON Request Bodys
 
+##### <a id="signup">Sign Up -> /api/auth/signup</a>
+```json
+{
+    "name":"juan",
+    "email":"castaneda@gmail.com",
+    "password":"password"
+}
+```
+
+##### <a id="signin">Log In -> /api/auth/signin</a>
+```json
+{
+     "email":"castaneda@gmail.com",
+     "password":"password"
+}
+```
