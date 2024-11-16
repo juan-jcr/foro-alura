@@ -14,6 +14,7 @@
 ✅ Realizaremos CRUD (CREATE, READ, UPDATE, DELETE) y usaremos un framework de Java Spring Framework por ende diseñaremos con arquitectura hexagonal
 
 #### 📃Visita la página del Desafío [¡Haciendo clic aquí!](https://www.aluracursos.com/challenges/oracle-one-back-end/aluraforo) 
+[![CDN hits](https://data.jsdelivr.com/v1/package/gh/Readme-Workflows/Readme-Icons/badge)](https://www.jsdelivr.com/package/gh/Readme-Workflows/Readme-Icons)
 
 <p/>
 <br>
