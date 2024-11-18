@@ -39,7 +39,7 @@ docker-compose build
 docker-compose up
 ````
 
-The app will start running at <http://localhost:8080/swagger-ui.html>
+Correr la aplicación <http://localhost:8080/swagger-ui.html>
 
 <br>
 
