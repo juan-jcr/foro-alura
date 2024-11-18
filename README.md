@@ -19,8 +19,41 @@
 
 <p/>
 <br>
-<h2>Instalación📌</h2>
+<h2>Configuración 📌</h2>
+
+Sí no tiene Java 21 instalado y evitar configuraciones como requisito debe tener instalado 
+Docker en la máquena local y seguir los siguientes pasos.
+
+**1. Clonar la aplicación**
+
+```bash
+git clone https://github.com/juan-jcr/foro-alura.git
+```
+
+**2. Construir los servicios**
+```bash
+docker-compose build
+```
+**2. Iniciar los servicios**
+````bash
+docker-compose up
+````
+
+
+**3. Change mysql username and password as per your installation**
+
++ open `src/main/resources/application.properties`
++ change `spring.datasource.username` and `spring.datasource.password` as per your mysql installation
+
+**4. Run the app using maven**
+
+```bash
+mvn spring-boot:run
+```
+The app will start running at <http://localhost:8080>
+
 <br>
+
 <h2>Funcionalidad 🔎</h2>
  ## Explore Rest APIs
 
@@ -70,8 +103,8 @@ The app defines following CRUD APIs.
     "course": "Curso Uno"
 }
 ```
+### Response when creating topic
 ```json
-//Response when creating topic
 {
     "id": 1,
     "title": "Titulo Uno",
