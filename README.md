@@ -28,10 +28,12 @@
 
 <h2>Configuración 📌</h2>
 **1. Clonar la aplicación**
+
 ```bash
 git clone https://github.com/juan-jcr/foro-alura.git
 cd foro-alura
 ```
+
 **2. Crear una base de datos foro-alura**
 
 **3. Editar la configuración application.properties para conectarse a la base de datos**
