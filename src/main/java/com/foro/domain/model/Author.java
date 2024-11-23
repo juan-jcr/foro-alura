@@ -1,7 +1,5 @@
 package com.foro.domain.model;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Author {
     private Long id;

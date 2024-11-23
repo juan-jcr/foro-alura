@@ -19,27 +19,24 @@
 
 <p/>
 <br>
+
+<h2>Requisitos</h2>
+
+**1. Tener instalado Java jdk 21**
+
+**2. Tener instalado MySQL y Maven**
+
 <h2>Configuración 📌</h2>
-
-Sí no tiene Java 21 instalado y evitar configuraciones como requisito debe tener instalado 
-Docker en la máquena local y seguir los siguientes pasos.
-
 **1. Clonar la aplicación**
-
 ```bash
 git clone https://github.com/juan-jcr/foro-alura.git
+cd foro-alura
 ```
+**2. Crear una base de datos foro-alura**
 
-**2. Construir los servicios**
-```bash
-docker-compose build
-```
-**2. Iniciar los servicios**
-````bash
-docker-compose up
-````
+**3. Editar la configuración application.properties para conectarse a la base de datos**
 
-Correr la aplicación <http://localhost:8080/swagger-ui.html>
+**4. Correr la aplicación <http://localhost:8080/swagger-ui.html>**
 
 <br>
 
