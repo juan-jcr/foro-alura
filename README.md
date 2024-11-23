@@ -27,6 +27,7 @@
 **2. Tener instalado MySQL y Maven**
 
 <h2>Configuración 📌</h2>
+
 **1. Clonar la aplicación**
 
 ```bash
